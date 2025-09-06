@@ -2,6 +2,10 @@ pyproject.toml
 src/skyscribe/cli.py
 src/skyscribe/agents/features.py
 src/skyscribe/agents/ingestion.py
+src/skyscribe/agents/writer.py
+src/skyscribe/model/load.py
+src/skyscribe/model/templater.py
+src/skyscribe/model/train.py
 src/skyscribe/utils/printing.py
 src/skyscribe_cli.egg-info/PKG-INFO
 src/skyscribe_cli.egg-info/SOURCES.txt
