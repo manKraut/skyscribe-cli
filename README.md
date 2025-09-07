@@ -14,24 +14,19 @@
 - **LLM summarizer** (optional):  
   - Uses TinyLlama (or another open model).  
   - Supports LoRA adapters for domain-specific tuning (e.g., weather phrasing).  
-- Packaged with a **Dockerfile** for one-command deployment.  
 
 ---
 
-## 🚀 Quickstart
-
 ### Local (Python venv)
 ```bash
-git clone https://github.com/your-username/skyscribe-cli.git
+git clone https://github.com/manKraut/skyscribe-cli.git
 cd skyscribe-cli
 
 python3 -m venv .venv
 source .venv/bin/activate   # Windows: .venv\Scripts\activate
 
 pip install -e .
-Run examples
-bash
-Copy code
+
 # Forecast for today
 skyscribe forecast "Paris"
 
@@ -46,20 +41,17 @@ skyscribe ask "Will it rain before 18:00 in Madrid?"
 
 # Inspect raw data
 skyscribe raw "London"
-🧠 Optional: LLM + LoRA Adapter
-Install ML dependencies:
+```
 
-bash
-Copy code
+🧠 Optional: LLM + LoRA Adapter
+```bash
+# Install ML dependencies:
+
 pip install "transformers>=4.44" "accelerate>=0.33" "peft>=0.12" "datasets>=2.20" torch
 Train a tiny LoRA adapter:
 
-bash
-Copy code
 skyscribe train --cities "Paris,Athens,London,Oslo" --days 2 --out adapters/tinyllama-lora --epochs 1
 Run with your adapter:
 
-bash
-Copy code
 export SKYSCRIBE_LORA_ADAPTER="adapters/tinyllama-lora"
 skyscribe forecast "Berlin" --when today --llm
