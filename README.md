@@ -8,7 +8,7 @@
 - Fetches weather data from [Open-Meteo](https://open-meteo.com/) (no API key required).  
 - Multiple modes:  
   - `forecast` → Today, tomorrow, or multi-day summaries.  
-  - `raw` → Inspect the raw hourly data in tabular form.   
+  - `raw` → Inspect the raw hourly data in tabular form.
 - **Rule-based summarizer** (lightweight, works out of the box).  
 - **LLM summarizer** (optional):  
   - Uses TinyLlama (or another open model).  
@@ -34,9 +34,6 @@ skyscribe forecast "Berlin" --when tomorrow
 
 # Multi-day forecast (next 3 days)
 skyscribe forecast "Athens" --when 3
-
-# Natural-language Q&A
-skyscribe ask "Will it rain before 18:00 in Madrid?"
 
 # Inspect raw data
 skyscribe raw "London"
