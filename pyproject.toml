@@ -1,21 +1,40 @@
 [project]
 name = "skyscribe-cli"
-version = "0.0.1"
-description = "CLI multi-agent weather briefs from open data"
+version = "0.1.0"
+description = "SkyScribe — CLI-based multi-agent weather briefs with optional LLM + LoRA adapters"
 readme = "README.md"
 requires-python = ">=3.11"
+authors = [
+  { name = "Your Name", email = "your_email@example.com" }
+]
+
 dependencies = [
+  # Core CLI + data handling
   "typer>=0.12.3",
   "httpx>=0.27.0",
   "pydantic>=2.8.2",
-  "pytz>=2024.1",
-  "python-dateutil>=2.9.0.post0",
   "pandas>=2.2.2",
+  "numpy>=1.26",
+  "python-dateutil>=2.9.0.post0",
+  "pytz>=2024.1",
 ]
+
+[project.optional-dependencies]
+ml = [
+  # ML stack for LoRA training/inference
+  "torch",                        # installed separately for CPU/GPU via pip index-url
+  "transformers>=4.44",
+  "accelerate>=0.33",
+  "peft>=0.12",
+  "datasets>=2.20",
+]
+# GPU-specific extra (install only on CUDA systems):
+#   "bitsandbytes>=0.43"
 
 [project.scripts]
 skyscribe = "skyscribe.cli:app"
 
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
+
