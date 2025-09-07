@@ -8,8 +8,7 @@
 - Fetches weather data from [Open-Meteo](https://open-meteo.com/) (no API key required).  
 - Multiple modes:  
   - `forecast` → Today, tomorrow, or multi-day summaries.  
-  - `raw` → Inspect the raw hourly data in tabular form.  
-  - `ask` → Query conditions with natural questions (e.g., *“Will it rain before 18:00 in Berlin?”*).  
+  - `raw` → Inspect the raw hourly data in tabular form.   
 - **Rule-based summarizer** (lightweight, works out of the box).  
 - **LLM summarizer** (optional):  
   - Uses TinyLlama (or another open model).  
